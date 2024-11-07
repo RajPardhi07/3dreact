@@ -34,7 +34,7 @@ const App = () => {
   // }
 
   return (
-    <div id="main" className="scroll-container fixed top-0 left-0 overflow-scroll h-[100vh]" >
+    <div id="main" className="scroll-container fixed top-0 left-0 overflow-scroll w-full h-[100vh]" >
 
       {/* {
         !show3dmodel && (
@@ -43,7 +43,7 @@ const App = () => {
         )
       } */}
       {/* <ModelSection show3dmodel={show3dmodel} /> */}
-      <ModelSection />
+      {/* <ModelSection /> */}
       <Jorden />
       <BrandSection />
       <PetsCar />
