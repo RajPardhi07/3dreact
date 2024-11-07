@@ -1,0 +1,9 @@
+.gallery {
+    min-height: 100vh; /* Ensure it's at least full-screen height */
+    position: relative;
+  }
+  
+  .mainBlock {
+    height: auto; /* Make sure the block adapts to the content */
+  }
+  

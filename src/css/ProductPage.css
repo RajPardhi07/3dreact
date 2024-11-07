@@ -1,0 +1,34 @@
+@font-face {
+    font-family:druk;
+    src: url(../Fonts/da67291a80319ca161510e6d13756823.ttf);
+  }
+  
+  .canvas-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden; 
+      z-index: 20;
+      background-color: #ebedf0;
+      
+      
+    }
+    
+    .full-screen-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin-left: -35vh;
+    }
+    
+    .carDets{
+      font-family: gilroy;
+    }
+    .carName{
+      font-family: gilroy;
+  
+    }
+
+    .GrayBox{
+        background-color: #00000072;
+    }
