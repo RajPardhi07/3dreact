@@ -32,3 +32,12 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+#main{
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  height: 760px;
+  width: 100%;
+  
+}

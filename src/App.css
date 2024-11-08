@@ -7,3 +7,11 @@
     height: auto; /* Make sure the block adapts to the content */
   }
   
+  #main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    height: 1180px;
+    
+  }
