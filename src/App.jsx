@@ -1,9 +1,10 @@
+import { useState } from "react";
 import BrandSection from "./components/BrandSection";
 import Jorden from "./components/Jorden";
 import ModelSection from "./components/ModelSection";
 import PetsCar from "./components/PetsCar";
 import Platform from "./components/Platform";
-// import SelectCar from "./components/SelectCar";
+import SelectCar from "./components/SelectCar";
 // import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 // import { Route, Routes } from "react-router-dom";
 // import CarDetailPage from "./pages/HomePage/CarDetailPage/CarDetailPage";
@@ -27,23 +28,22 @@ const App = () => {
   //   }
   // }, [])
 
-  // const [show3dmodel, setShow3dmodel] = useState(false);
+  const [show3dmodel, setShow3dmodel] = useState(false);
 
-  // const handleAnimationComplete = () => {
-  //   setShow3dmodel(true);
-  // }
+  const handleAnimationComplete = () => {
+    setShow3dmodel(true);
+  }
 
   return (
     <div id="main" className="scroll-container" >
 
-      {/* {
+      {
         !show3dmodel && (
 
           <SelectCar onAnimationComplete={handleAnimationComplete} />
         )
-      } */}
-      {/* <ModelSection show3dmodel={show3dmodel} /> */}
-      {/* <ModelSection /> */}
+      }
+      <ModelSection show3dmodel={show3dmodel} />
       <Jorden />
       <BrandSection />
       <PetsCar />

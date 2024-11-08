@@ -22,111 +22,308 @@ const SelectCar = ({ onAnimationComplete }) => {
         car3: true,
     });
 
-   
+
+
+    // const handleVideoClick1 = () => {
+    //     // Create a GSAP timeline for sequencing the animations
+    //     const tl = gsap.timeline();
+
+    //     // Step 1: Increase the size of the video
+    //     tl.to(".secondCar", {
+    //         opacity:0,
+    //         duration: 0.3, 
+    //         ease: 'power1.out'
+    //     },"do")
+    //     .to(".thirdCar", {
+    //         opacity:0,
+    //         duration: 0.3, 
+    //         ease: 'power1.out'
+    //     }, "do")
+    //     .to(".firstCar", {
+    //         width: "100%",
+    //         height: "100vh",
+    //         top: 0,
+    //         left: 0,
+    //         zIndex: 999,
+    //         duration:0.9, 
+    //         ease: 'power1.out'
+    //     },"-=0.1")
+
+    //         // Step 2: Play the video after the resize animation starts
+    //         .add(() => {
+    //             if (isPlayingForward.car1) {
+    //                 videoRef1.current.play();
+    //                 setIsPlayingForward(prevState => ({ ...prevState, car1: false }));
+    //             }
+    //         }, "-=0.5");  // Slight overlap, so the video starts playing during resizing
+    // };
 
     const handleVideoClick1 = () => {
-        // Create a GSAP timeline for sequencing the animations
+        // Define media query breakpoints
+        const mm = gsap.matchMedia();
+
+        // Define a GSAP timeline for sequencing the animations
         const tl = gsap.timeline();
 
-        // Step 1: Increase the size of the video
-        tl.to(".secondCar", {
-            opacity:0,
-            duration: 0.3, 
-            ease: 'power1.out'
-        },"do")
-        .to(".thirdCar", {
-            opacity:0,
-            duration: 0.3, 
-            ease: 'power1.out'
-        }, "do")
-        .to(".firstCar", {
-            width: "100%",
-            height: "100vh",
-            top: 0,
-            left: 0,
-            zIndex: 999,
-            duration:0.9, 
-            ease: 'power1.out'
-        },"-=0.1")
+        // Use matchMedia to check for mobile view
+        mm.add("(max-width: 768px)", () => {
+            // Mobile view animations
+            tl.to(".secondCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+                .to(".thirdCar", {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power1.out'
+                }, "do")
+                .to(".firstCar", {
+                    width: "100%",    // Adjust width for mobile
+                    height: "80%",  // Adjust height for mobile
+                    top: "50%",
+                    left: "50%",
+                    transform:"translate(-50%, -50%)",
+                    zIndex: 999,
+                    duration: 0.9,
+                    ease: 'power1.out'
+                }, "-=0.1")
+                .add(() => {
+                    if (isPlayingForward.car1) {
+                        videoRef1.current.play();
+                        setIsPlayingForward(prevState => ({ ...prevState, car1: false }));
+                    }
+                }, "-=0.5");
+        });
 
-            // Step 2: Play the video after the resize animation starts
-            .add(() => {
-                if (isPlayingForward.car1) {
-                    videoRef1.current.play();
-                    setIsPlayingForward(prevState => ({ ...prevState, car1: false }));
-                }
-            }, "-=0.5");  // Slight overlap, so the video starts playing during resizing
+        // Desktop view (default)
+        mm.add("(min-width: 769px)", () => {
+            tl.to(".secondCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+                .to(".thirdCar", {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power1.out'
+                }, "do")
+                .to(".firstCar", {
+                    width: "100%",      // Full width for desktop
+                    height: "100vh",    // Full height for desktop
+                    top: 0,
+                    left: 0,
+                    zIndex: 999,
+                    duration: 0.9,
+                    ease: 'power1.out'
+                }, "-=0.1")
+                .add(() => {
+                    if (isPlayingForward.car1) {
+                        videoRef1.current.play();
+                        setIsPlayingForward(prevState => ({ ...prevState, car1: false }));
+                    }
+                }, "-=0.5");
+        });
     };
 
-
     const handleVideoClick2 = () => {
+        const mm = gsap.matchMedia();
         const tl = gsap.timeline();
-
-        // Step 1: Increase the size of the video
-        tl.to(".firstCar", {
-            opacity:0,
-            duration: 0.4, 
-            ease: 'power1.out'
-        },"do")
-        .to(".thirdCar", {
-            opacity:0,
-            duration: 0.4, 
-            ease: 'power1.out'
-        }, "do")
-        tl.to(".secondCar", {
-            width: "100%",
-            height: "100vh",
-            top: 0,
-            left: 0,
-            zIndex: 999,
-            duration: 0.9,
-            ease: 'power1.out'
-        })
-
+    
+        mm.add("(max-width: 768px)", () => {
+            // Mobile view animations
+            tl.to(".firstCar", {
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power1.out'
+            }, "do")
+            .to(".thirdCar", {
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power1.out'
+            }, "do")
+            .to(".secondCar", {
+                width: "100%",      // Adjust width for mobile
+                height: "80%",    // Adjust height for mobile
+                top: "50%",
+                left: "50%",
+                transform:"translate(-50%, -50%)",
+                zIndex: 999,
+                duration: 0.9,
+                ease: 'power1.out'
+            })
             .add(() => {
                 if (isPlayingForward.car2) {
                     videoRef2.current.play();
                     setIsPlayingForward(prevState => ({ ...prevState, car2: false }));
                 }
             }, "-=0.5");
+        });
+    
+        mm.add("(min-width: 769px)", () => {
+            // Desktop view animations
+            tl.to(".firstCar", {
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power1.out'
+            }, "do")
+            .to(".thirdCar", {
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power1.out'
+            }, "do")
+            .to(".secondCar", {
+                width: "100%",     // Full width for desktop
+                height: "100vh",   // Full height for desktop
+                top: 0,
+                left: 0,
+                zIndex: 999,
+                duration: 0.9,
+                ease: 'power1.out'
+            })
+            .add(() => {
+                if (isPlayingForward.car2) {
+                    videoRef2.current.play();
+                    setIsPlayingForward(prevState => ({ ...prevState, car2: false }));
+                }
+            }, "-=0.5");
+        });
     };
+    
+
+
+    // const handleVideoClick2 = () => {
+    //     const tl = gsap.timeline();
+
+    //     // Step 1: Increase the size of the video
+    //     tl.to(".firstCar", {
+    //         opacity: 0,
+    //         duration: 0.4,
+    //         ease: 'power1.out'
+    //     }, "do")
+    //         .to(".thirdCar", {
+    //             opacity: 0,
+    //             duration: 0.4,
+    //             ease: 'power1.out'
+    //         }, "do")
+    //     tl.to(".secondCar", {
+    //         width: "100%",
+    //         height: "100vh",
+    //         top: 0,
+    //         left: 0,
+    //         zIndex: 999,
+    //         duration: 0.9,
+    //         ease: 'power1.out'
+    //     })
+
+    //         .add(() => {
+    //             if (isPlayingForward.car2) {
+    //                 videoRef2.current.play();
+    //                 setIsPlayingForward(prevState => ({ ...prevState, car2: false }));
+    //             }
+    //         }, "-=0.5");
+    // };
+
+    // const handleVideoClick3 = () => {
+    //     const tl = gsap.timeline();
+
+    //     tl.to(".firstCar", {
+    //         opacity: 0,
+    //         duration: 0.3,
+
+    //     }, "do")
+    //         .to(".secondCar", {
+    //             opacity: 0,
+    //             duration: 0.3,
+
+    //         }, "do")
+
+    //     tl.to(".thirdCar", {
+    //         width: "100%",
+    //         height: "95vh",
+    //         top: 0,
+    //         left: 0,
+    //         zIndex: 999,
+    //         duration: 0.8,
+    //         ease: 'power1.out'
+    //     })
+
+    //         .add(() => {
+    //             if (isPlayingForward.car3) {
+    //                 videoRef3.current.play();
+    //                 setIsPlayingForward(prevState => ({ ...prevState, car3: false }));
+    //             }
+    //         }, "-=0.5");
+    // };
 
     const handleVideoClick3 = () => {
+        const mm = gsap.matchMedia();
         const tl = gsap.timeline();
+    
+        mm.add("(max-width: 768px)", () => {
+            // Mobile view animations
+            tl.to(".firstCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+            .to(".secondCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+            .to(".thirdCar", {
+                width: "100%",      // Adjust width for mobile
+                height: "80%",    // Adjust height for mobile
+                top: "50%",
+                left: "50%",
+                transform:"translate(-50%, -50%)",
 
-        tl.to(".firstCar", {
-            opacity:0,
-            duration: 0.3, 
-           
-        },"do")
-        .to(".secondCar", {
-            opacity:0,
-            duration: 0.3, 
-            
-        }, "do")
-
-        tl.to(".thirdCar", {
-            width: "100%",
-            height: "100vh",
-            top: 0,
-            left: 0,
-            zIndex: 999,
-            duration: 0.8,
-            ease: 'power1.out'
-        })
-
+                zIndex: 999,
+                duration: 0.8,
+                ease: 'power1.out'
+            })
             .add(() => {
                 if (isPlayingForward.car3) {
                     videoRef3.current.play();
                     setIsPlayingForward(prevState => ({ ...prevState, car3: false }));
                 }
             }, "-=0.5");
+        });
+    
+        mm.add("(min-width: 769px)", () => {
+            // Desktop view animations
+            tl.to(".firstCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+            .to(".secondCar", {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power1.out'
+            }, "do")
+            .to(".thirdCar", {
+                width: "100%",     // Full width for desktop
+                height: "100vh",    // Full height for desktop
+                top: 0,
+                left: 0,
+                zIndex: 999,
+                duration: 0.8,
+                ease: 'power1.out'
+            })
+            .add(() => {
+                if (isPlayingForward.car3) {
+                    videoRef3.current.play();
+                    setIsPlayingForward(prevState => ({ ...prevState, car3: false }));
+                }
+            }, "-=0.5");
+        });
     };
-   
+    
 
 
 
-   
 
     const handleClose = () => {
         gsap.to(".firstCar", {
@@ -178,8 +375,8 @@ const SelectCar = ({ onAnimationComplete }) => {
 
     return (
         <>
-            <div ref={mainSelectRef} className="mainSelect fixed bg-black z-30 top-0 w-full flex items-center flex-col h-screen overflow-hidden bg-[#050805]">
-                 {/* <div id="Mainloader" className="w-full h-screen bg-black z-30 absolute top-0">
+            <div ref={mainSelectRef} className="mainSelect fixed  bg-black z-30 top-0 w-full flex items-center flex-col h-screen overflow-hidden ">
+                {/* <div id="Mainloader" className="w-full h-screen bg-black z-30 absolute top-0">
                     <div id="keeps" className="absolute flex gap-8 left-[15%] top-1/2 transform-translate-x-1/2 -translate-y-1/2">
                         <h1 className="text-white text-9xl font-semibold" >Keeps</h1>
                         <h1 className="text-white text-9xl font-semibold">You</h1>
@@ -190,13 +387,13 @@ const SelectCar = ({ onAnimationComplete }) => {
                 </div>  */}
                 {/* <div id="red" className="w-[100%] top-[100%] h-[0vh] z-40 absolute bg-[#FF5330]"></div> */}
 
-                <h1 id="play" className="text-white mt-10">CHOOSE YOUR CAR</h1>
+                {/* <h1 id="play" className="text-white mt-10">CHOOSE YOUR CAR</h1> */}
 
 
 
-                <div className="w-[90%] h-[50vh] mt-5 flex bg-[#000100] items-center justify-between duration-300 transition ease-in-out">
+                <div className="w-[100%] h-full mt-0 xl:mt-5 flex xl:w-[90%] xl:h-[50vh] bg-[#000100] items-center justify-between duration-300 transition ease-in-out">
                     <div className="chooseCar  z-10   w-full h-full">
-                        <div className="firstCar absolute left-[5%] top-[24%] w-[27vw] h-[45vh] rounded-md overflow-hidden cursor-pointer ">
+                        <div className="firstCar absolute left-[0%] top-[0%] w-full h-[45vh] xl:left-[5%] xl:top-[24%] xl:w-[27vw] xl:h-[45vh] rounded-md overflow-hidden cursor-pointer ">
 
                             <video
                                 ref={videoRef1}
@@ -208,7 +405,7 @@ const SelectCar = ({ onAnimationComplete }) => {
                             />
                         </div>
 
-                        <div className="secondCar absolute left-[35%] top-[24%] w-[28vw] h-[45vh] rounded-md overflow-hidden cursor-pointer ">
+                        <div className="secondCar absolute left-[0%] top-[32%] w-full h-[45vh] xl:left-[35%] xl:top-[24%] xl:w-[28vw] xl:h-[45vh] rounded-md overflow-hidden cursor-pointer ">
 
                             <video
                                 ref={videoRef2}
@@ -220,7 +417,7 @@ const SelectCar = ({ onAnimationComplete }) => {
                             />
                         </div>
 
-                        <div className="thirdCar absolute  left-[66%] top-[24%] w-[28vw] h-[45vh] rounded-md overflow-hidden cursor-pointer ">
+                        <div className="thirdCar absolute   left-[0%] top-[65%] w-full h-[45vh] xl:left-[66%] xl:top-[24%] xl:w-[28vw] xl:h-[45vh] rounded-md overflow-hidden cursor-pointer ">
 
                             <video
                                 ref={videoRef3}
@@ -234,9 +431,7 @@ const SelectCar = ({ onAnimationComplete }) => {
                     </div>
                 </div>
 
-                <button className="text-white border mt-16 border-white w-[14vw] h-12">
-                    EXPLORE THE DRIVE
-                </button>
+
             </div>
         </>
     );
