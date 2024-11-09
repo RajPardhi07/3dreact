@@ -28,22 +28,23 @@ const App = () => {
   //   }
   // }, [])
 
-  const [show3dmodel, setShow3dmodel] = useState(false);
+  // const [show3dmodel, setShow3dmodel] = useState(false);
 
-  const handleAnimationComplete = () => {
-    setShow3dmodel(true);
-  }
+  // const handleAnimationComplete = () => {
+  //   setShow3dmodel(true);
+  // }
 
   return (
     <div id="main" className="scroll-container" >
 
-      {
+      {/* {
         !show3dmodel && (
 
           <SelectCar onAnimationComplete={handleAnimationComplete} />
         )
-      }
-      <ModelSection show3dmodel={show3dmodel} />
+      } */}
+      {/* <ModelSection show3dmodel={show3dmodel} /> */}
+      <ModelSection />
       <Jorden />
       <BrandSection />
       <PetsCar />

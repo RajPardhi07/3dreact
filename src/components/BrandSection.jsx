@@ -68,25 +68,25 @@ const BrandSection = () => {
 
 
     useGSAP(() => {
-let BoxA = document.querySelector(".BoxA");
+        let BoxA = document.querySelector(".BoxA");
 
-BoxA.addEventListener("mouseenter", () => {
-    gsap.to("#logo", {
-        scale:0,
-        y:90,
-        duration:2,
-        ease:"ease"
-    })
-})
+        BoxA.addEventListener("mouseenter", () => {
+            gsap.to("#logo", {
+                scale: 0,
+                y: 90,
+                duration: 2,
+                ease: "ease"
+            })
+        })
 
-BoxA.addEventListener("mouseleave", () => {
-    gsap.to("#logo", {
-        scale:1,
-        y:10,
-        
-        duration:1.1
-    })
-})
+        BoxA.addEventListener("mouseleave", () => {
+            gsap.to("#logo", {
+                scale: 1,
+                y: 10,
+
+                duration: 1.1
+            })
+        })
     }, [])
 
     const handleMouseEnter = (audiosrc) => {
@@ -107,65 +107,65 @@ BoxA.addEventListener("mouseleave", () => {
     };
 
     return (
-        <div className="gallery relative w-full h-screen z-40  py-2 flex items-center justify-center bg-black">
+        <div className="gallery relative w-full h-screen z-40 py-2 flex items-center justify-center bg-black">
 
 
 
 
-            <div className="mainBlock w-[90%] mt- ml-7 grid grid-cols-3 gap-7 h-full ">
+            <div className="mainBlock w-full xl:w-[90%]  mt-0 ml-2 xl:ml-7 grid grid-cols-2 xl:grid-cols-3 gap-3 xl:gap-7 h-full ">
                 <div onMouseEnter={() => handleMouseEnter(AstonMartin)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxA relative w-[21vw] h-[13vw] bg-white hover-image ">
+                    className="BoxA relative w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image ">
                     <img id="logo" className="logo w-full absolute h-full object-cover" src="https://cdn.freebiesupply.com/logos/large/2x/aston-martin-logo-png-transparent.png" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1571753753463-636443ad284c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(FerrariSound)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxB w-[21vw] h-[12vw] hover-image">
+                    className="BoxB w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[12vw] hover-image">
                     <img className="logo w-full h-full object-cover" src="https://static.vecteezy.com/system/resources/previews/020/500/228/original/ferrari-brand-logo-car-symbol-black-design-italian-automobile-illustration-free-vector.jpg" alt="" />
-                    <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    <img className="hidden-image absolute top-0 left-0 w-[95%] xl:w-fulll object-cover" src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(Lamborginisound)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxC w-[21vw] h-[12vw] bg-white hover-image relative ">
+                    className="BoxC w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative ">
                     <img className="logo w-full h-full object-cover" src="https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem.png" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1621688285384-92e5019db2d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(Bently)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxD w-[21vw] h-[12vw] bg-white hover-image relative">
+                    className="BoxD w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative">
                     <img className="logo w-full h-full object-cover" src="https://pngimg.com/d/bentley_PNG21.png" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/25my/25my-gt-testing/Dynamic%20Stage%20Main%20v2.jpg/_jcr_content/renditions/original.image_file.1824.782.file/Dynamic%20Stage%20Main%20v2.jpg" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(BMW)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxE w-[21vw] h-[12vw] hover-image relative">
+                    className="BoxE w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] hover-image relative">
                     <img className="logo w-full h-full object-cover" src="https://thumbs.dreamstime.com/b/bmw-logo-editorial-illustrative-white-background-eps-download-vector-jpeg-banner-bmw-logo-editorial-illustrative-white-208329176.jpg" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://www.bmw.in/content/dam/bmw/common/topics/fascination-bmw/concept-vehicles/concept-m8/bmw-f93-cv-onepager-exterior-attitude-sd-04.jpg" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(Porsche)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxF w-[21vw] h-[12vw] bg-white hover-image relative">
+                    className="BoxF w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative">
                     <img className="logo w-full h-full object-cover" src="https://di-uploads-pod3.dealerinspire.com/porscheoffremont/uploads/2018/09/porsche-logo.jpg" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://cdni.autocarindia.com/ExtraImages/20220428060534_Porsche_911_Sport_Classic_2023_front.jpg" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(FerrariSound)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxG w-[21vw] h-[12vw] bg-white hover-image relative">
-                    <img className="logo w-full h-full object-cover" src="https://thumbs.dreamstime.com/b/jaguar-logo-paris-august-seen-white-background-157672465.jpg" alt="" />
+                    className="BoxG w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative">
+                    <img className="logo w-full h-[80%] xl:h-full object-cover" src="https://thumbs.dreamstime.com/b/jaguar-logo-paris-august-seen-white-background-157672465.jpg" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://www.usatoday.com/gcdn/-mm-/bb6ba837e3b4cc8b83497a20e0d554b686454d18/c=1477-1748-3870-3547/local/-/media/2016/02/16/USATODAY/USATODAY/635912498290797316-JAGUAR-F-TYPE-SVR-01-COUPE-Location.jpg" alt="" />
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(FerrariSound)}
                     onMouseLeave={handleMouseLeave}
-                    className="BoxH w-[21vw] h-[12vw] bg-white hover-image relative">
-                    <img className="logo w-full h-full object-cover" src="https://images-stag.jazelc.com/uploads/theautopian-m2en/bugatti_logo_idea2.jpg" alt="" />
+                    className="BoxH w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative">
+                    <img className="logo w-full h-[90%] xl:h-full object-cover" src="https://images-stag.jazelc.com/uploads/theautopian-m2en/bugatti_logo_idea2.jpg" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1685933198220-9961c323e68b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
 
                 </div>
                 <div onMouseEnter={() => handleMouseEnter(MercedesSound)}
                     onMouseLeave={handleMouseLeave}
-                    className=" BoxI w-[21vw] h-[12vw] bg-white hover-image relative">
-                    <img className="logo w-full h-full object-cover" src="https://i.pinimg.com/originals/9a/a9/5b/9aa95b12764a3b11b97947893e4ee0c0.png" alt="" />
+                    className=" BoxI w-[45vw] h-[31vw] xl:w-[21vw] xl:h-[13vw] bg-white hover-image relative">
+                    <img className="logo w-full h-[80%] xl:h-full object-cover" src="https://i.pinimg.com/originals/9a/a9/5b/9aa95b12764a3b11b97947893e4ee0c0.png" alt="" />
                     <img className="hidden-image absolute top-0 left-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1616788414905-46e9019f204f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
 
                 </div>

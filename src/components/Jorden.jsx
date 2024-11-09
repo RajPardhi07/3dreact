@@ -28,7 +28,7 @@
 const Jorden = () => {
   return (
     <div className="w-full  z-20 h-[10vh] ">
-      <div className=" w-full absolute z-20 h-[10vh] bg-black">
+      <div className=" w-full hidden absolute z-20 h-[10vh] bg-black">
       </div>
     </div>
   )

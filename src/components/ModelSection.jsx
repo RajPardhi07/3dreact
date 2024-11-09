@@ -4,15 +4,16 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import BuyNow from "../components/BuyNow";
 
-const ModelSection = ({ show3dmodel }) => {
+const ModelSection = () => {
     return (
         <div>
-            <div className="h-screen fixed top-0  z-10 w-full">
+            <div className="h-screen  fixed top-0  z-10 w-full">
 
-                {show3dmodel && (
+                {/* {show3dmodel && (
 
                     <CanvasContainer />
-                )}
+                )} */}
+                <CanvasContainer />
             </div>
             <Header />
             <Hero />

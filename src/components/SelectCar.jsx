@@ -24,40 +24,6 @@ const SelectCar = ({ onAnimationComplete }) => {
 
 
 
-    // const handleVideoClick1 = () => {
-    //     // Create a GSAP timeline for sequencing the animations
-    //     const tl = gsap.timeline();
-
-    //     // Step 1: Increase the size of the video
-    //     tl.to(".secondCar", {
-    //         opacity:0,
-    //         duration: 0.3, 
-    //         ease: 'power1.out'
-    //     },"do")
-    //     .to(".thirdCar", {
-    //         opacity:0,
-    //         duration: 0.3, 
-    //         ease: 'power1.out'
-    //     }, "do")
-    //     .to(".firstCar", {
-    //         width: "100%",
-    //         height: "100vh",
-    //         top: 0,
-    //         left: 0,
-    //         zIndex: 999,
-    //         duration:0.9, 
-    //         ease: 'power1.out'
-    //     },"-=0.1")
-
-    //         // Step 2: Play the video after the resize animation starts
-    //         .add(() => {
-    //             if (isPlayingForward.car1) {
-    //                 videoRef1.current.play();
-    //                 setIsPlayingForward(prevState => ({ ...prevState, car1: false }));
-    //             }
-    //         }, "-=0.5");  // Slight overlap, so the video starts playing during resizing
-    // };
-
     const handleVideoClick1 = () => {
         // Define media query breakpoints
         const mm = gsap.matchMedia();
@@ -192,69 +158,6 @@ const SelectCar = ({ onAnimationComplete }) => {
     
 
 
-    // const handleVideoClick2 = () => {
-    //     const tl = gsap.timeline();
-
-    //     // Step 1: Increase the size of the video
-    //     tl.to(".firstCar", {
-    //         opacity: 0,
-    //         duration: 0.4,
-    //         ease: 'power1.out'
-    //     }, "do")
-    //         .to(".thirdCar", {
-    //             opacity: 0,
-    //             duration: 0.4,
-    //             ease: 'power1.out'
-    //         }, "do")
-    //     tl.to(".secondCar", {
-    //         width: "100%",
-    //         height: "100vh",
-    //         top: 0,
-    //         left: 0,
-    //         zIndex: 999,
-    //         duration: 0.9,
-    //         ease: 'power1.out'
-    //     })
-
-    //         .add(() => {
-    //             if (isPlayingForward.car2) {
-    //                 videoRef2.current.play();
-    //                 setIsPlayingForward(prevState => ({ ...prevState, car2: false }));
-    //             }
-    //         }, "-=0.5");
-    // };
-
-    // const handleVideoClick3 = () => {
-    //     const tl = gsap.timeline();
-
-    //     tl.to(".firstCar", {
-    //         opacity: 0,
-    //         duration: 0.3,
-
-    //     }, "do")
-    //         .to(".secondCar", {
-    //             opacity: 0,
-    //             duration: 0.3,
-
-    //         }, "do")
-
-    //     tl.to(".thirdCar", {
-    //         width: "100%",
-    //         height: "95vh",
-    //         top: 0,
-    //         left: 0,
-    //         zIndex: 999,
-    //         duration: 0.8,
-    //         ease: 'power1.out'
-    //     })
-
-    //         .add(() => {
-    //             if (isPlayingForward.car3) {
-    //                 videoRef3.current.play();
-    //                 setIsPlayingForward(prevState => ({ ...prevState, car3: false }));
-    //             }
-    //         }, "-=0.5");
-    // };
 
     const handleVideoClick3 = () => {
         const mm = gsap.matchMedia();

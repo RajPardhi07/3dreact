@@ -2,9 +2,9 @@
 const Header = () => {
     return (
         <header 
-         className="z-20 absolute top-0 text-black py-2 px-16 font-extrabold tracking-widest uppercase flex justify-between items-center w-full">
+         className="z-20 absolute top-0  text-black py-2 px-2 xl:px-16 font-extrabold tracking-widest uppercase flex justify-between items-center w-full">
             {/* logo / name */}
-            <div className="flex items-center text-5xl">
+            <div className="flex items-center text-xl xl:text-5xl">
                 <h1 className="font-rubix text-yellow-800">3D Model Car</h1>
                
             </div>
